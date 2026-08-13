@@ -9,7 +9,9 @@ Este é um projeto **Next.js** com página única (`/`), composta pelas seções
 - **Header** — cabeçalho de navegação do site
 - **Hero** — chamada principal com call-to-actions ("Agende um horário" e "Ver serviços")
 - **Serviços** — cards com os serviços oferecidos (Banho e Tosa, Atendimento Veterinário, Loja de Produtos, Hospedagem)
+- **Depoimentos** — avaliações de clientes que já atendem os pets na loja
 - **CTA** — seção de chamada para ação
+- **Contato** — formulário de contato validado com envio via Server Action
 - **Footer** — rodapé do site
 
 ## Tecnologias
@@ -18,10 +20,11 @@ Este é um projeto **Next.js** com página única (`/`), composta pelas seções
 - **[React 19](https://react.dev/)**
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[TailwindCSS 4](https://tailwindcss.com/)** — estilização utility-first
-- **[shadcn/ui](https://ui.shadcn.com/)** — componentes de UI reutilizáveis (base preparada em `components/ui`)
+- **[shadcn/ui](https://ui.shadcn.com/)** — componentes de UI reutilizáveis (`components/ui`)
+- **[React Hook Form](https://react-hook-form.com/)** + **[Zod](https://zod.dev/)** — formulários e validação (formulário de contato)
 - **ESLint** — padronização e qualidade de código
 
-> Estrutura preparada para uso futuro de **React Hook Form + Zod** (validação de formulários) e **Server Actions**, conforme padrão definido em `CLAUDE.md`.
+> Mutações (como o envio do formulário de contato) são feitas via **Server Actions** em `actions/`, conforme padrão definido em `CLAUDE.md`.
 
 ## Estrutura do Projeto
 
@@ -32,16 +35,22 @@ projeto-1/
 │   ├── page.tsx            # Página inicial
 │   └── globals.css         # Estilos globais / tokens Tailwind
 ├── components/             # Componentes de feature
-│   ├── ui/                 # Primitivos reutilizáveis (shadcn)
+│   ├── ui/                 # Primitivos reutilizáveis (shadcn): button, form, input, label, textarea
 │   ├── site-header.tsx
 │   ├── hero-section.tsx
 │   ├── services-section.tsx
+│   ├── testimonials-section.tsx
 │   ├── cta-section.tsx
+│   ├── contact-section.tsx
+│   ├── contact-form.tsx
 │   ├── site-footer.tsx
 │   └── icons.tsx
 ├── actions/                # Server Actions
+│   └── submit-contact-form.ts
 ├── lib/                    # Helpers, clients e configurações
+│   └── utils.ts
 ├── types/                  # Tipos globais e schemas Zod compartilhados
+│   └── contact-schema.ts
 └── public/                 # Arquivos estáticos
 ```
 
