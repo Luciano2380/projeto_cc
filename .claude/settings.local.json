@@ -30,7 +30,17 @@
       "Bash(ssh -T git@github.com -o StrictHostKeyChecking=accept-new)",
       "Bash(ssh-add -l)",
       "Bash(ssh -vT git@github.com -o StrictHostKeyChecking=accept-new -o IdentitiesOnly=yes -i /root/.ssh/id_ed25519)",
-      "Bash(export SSH_AUTH_SOCK=/tmp/ssh-XXXXXXxVLYcT/agent.5209)"
+      "Bash(export SSH_AUTH_SOCK=/tmp/ssh-XXXXXXxVLYcT/agent.5209)",
+      "Bash(git checkout *)",
+      "Bash(gh pr *)",
+      "mcp__github__create_pull_request",
+      "Bash(npm ping *)",
+      "Bash(npx shadcn@latest --version)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npm install *)",
+      "Bash(npx eslint *)",
+      "Bash(npm init *)",
+      "Bash(npx playwright *)"
     ]
   }
 }
