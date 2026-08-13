@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --version)",
+      "Bash(command -v node)",
+      "Read(//usr/local/bin/**)",
+      "Read(//home/luciano/**)",
+      "Bash(npm -v)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias \"@/*\" --use-npm --yes)",
+      "Bash(rm -rf /tmp/claude-0/-home-luciano-Documentos-claude-projeto-1/231f6746-76c2-465f-b458-d321a0b69e95/scratchpad/next-scaffold)",
+      "Bash(npx create-next-app@latest /tmp/claude-0/-home-luciano-Documentos-claude-projeto-1/231f6746-76c2-465f-b458-d321a0b69e95/scratchpad/next-scaffold --typescript --tailwind --eslint --app --src-dir=false --import-alias \"@/*\" --use-npm --yes)",
+      "Bash(chown -R luciano:luciano /home/luciano/Documentos/claude/projeto-1)",
+      "Bash(sudo chown -R luciano:luciano /home/luciano/Documentos/claude/projeto-1)",
+      "Bash(node -e 'console.log\\(require\\('\\\\''/home/luciano/Documentos/claude/projeto-1/node_modules/next/package.json'\\\\''\\).version\\)')",
+      "Bash(npm run *)",
+      "Bash(npx next *)",
+      "Bash(find /home/luciano/Documentos/claude/projeto-1 -maxdepth 2 -not -path */node_modules* -not -path */.next*)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(find / -maxdepth 4 -iname \"*.git-credentials\")",
+      "Bash(find / -maxdepth 5 -ipath \"*gh/hosts.yml\")",
+      "Bash(env)"
+    ]
+  }
+}
