@@ -1,38 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projeto 1 — Landing Page Pet Shop
 
-## Getting Started
+Landing page institucional para um pet shop/clínica veterinária, apresentando os serviços oferecidos (banho e tosa, atendimento veterinário, loja de produtos e hospedagem) com foco em captação de clientes.
 
-First, run the development server:
+## Sobre o Projeto
+
+Este é um projeto **Next.js** com página única (`/`), composta pelas seções:
+
+- **Header** — cabeçalho de navegação do site
+- **Hero** — chamada principal com call-to-actions ("Agende um horário" e "Ver serviços")
+- **Serviços** — cards com os serviços oferecidos (Banho e Tosa, Atendimento Veterinário, Loja de Produtos, Hospedagem)
+- **CTA** — seção de chamada para ação
+- **Footer** — rodapé do site
+
+## Tecnologias
+
+- **[Next.js 16](https://nextjs.org/)** (App Router)
+- **[React 19](https://react.dev/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+- **[TailwindCSS 4](https://tailwindcss.com/)** — estilização utility-first
+- **[shadcn/ui](https://ui.shadcn.com/)** — componentes de UI reutilizáveis (base preparada em `components/ui`)
+- **ESLint** — padronização e qualidade de código
+
+> Estrutura preparada para uso futuro de **React Hook Form + Zod** (validação de formulários) e **Server Actions**, conforme padrão definido em `CLAUDE.md`.
+
+## Estrutura do Projeto
+
+```
+projeto-1/
+├── app/                    # Rotas (App Router)
+│   ├── layout.tsx          # Layout raiz
+│   ├── page.tsx            # Página inicial
+│   └── globals.css         # Estilos globais / tokens Tailwind
+├── components/             # Componentes de feature
+│   ├── ui/                 # Primitivos reutilizáveis (shadcn)
+│   ├── site-header.tsx
+│   ├── hero-section.tsx
+│   ├── services-section.tsx
+│   ├── cta-section.tsx
+│   ├── site-footer.tsx
+│   └── icons.tsx
+├── actions/                # Server Actions
+├── lib/                    # Helpers, clients e configurações
+├── types/                  # Tipos globais e schemas Zod compartilhados
+└── public/                 # Arquivos estáticos
+```
+
+## Como Rodar o Projeto
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) 20+
+- npm
+
+### Instalação
+
+```bash
+npm install
+```
+
+### Ambiente de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build de produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Scripts Disponíveis
 
-To learn more about Next.js, take a look at the following resources:
+| Comando               | Descrição                                  |
+| ---------------------- | ------------------------------------------- |
+| `npm run dev`          | Inicia o servidor de desenvolvimento (porta 3000) |
+| `npm run build`        | Gera o build de produção                    |
+| `npm run start`        | Inicia o servidor com o build de produção   |
+| `npm run lint`         | Executa o ESLint                            |
+| `npm run type-check`   | Verifica os tipos com o TypeScript          |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Padrões do Projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Server Components por padrão** — `'use client'` só é adicionado quando há hooks, eventos ou APIs de browser
+- **Mutações via Server Actions** em `actions/` — nunca acessar banco de dados diretamente em Client Components
+- **TailwindCSS only** — sem CSS inline ou styled-components
+- Nomenclatura de arquivos em `kebab-case` e de componentes em `PascalCase`
 
-## Deploy on Vercel
+Consulte `CLAUDE.md` e `.claude/rules/rules-global.md` para o guia completo de arquitetura e convenções de código adotadas no projeto.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details
-Teste git commit 22lpos kkkk
-
+A forma mais simples de publicar este projeto é utilizando a [Vercel](https://vercel.com/new), criadora do Next.js. Consulte a [documentação de deploy do Next.js](https://nextjs.org/docs/app/building-your-application/deploying) para mais detalhes.
